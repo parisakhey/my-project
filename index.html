@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/style.css" type="text/css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container whole" style="
+        background: linear-gradient(
+          181deg,
+          rgb(248, 248, 244) 0%,
+          rgb(246, 246, 221) 21%,
+          rgb(243, 243, 209) 44%,
+          rgb(246, 246, 197) 70%,
+          rgb(253, 253, 161) 99%
+        );
+      ">
+        <form class="search-form" id="search-form">
+            <div class="row">
+                <div class="col-9">
+                    <input type="text" class="form-control" placeholder="Enter a city" id="city-text-input" />
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="searchButton" id="search-button">
+                        search
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="container info">
+            <div class="weatherNow">
+                <div class="row">
+                    <div class="col">
+                        <img src="images/suntransparent.png" class="sunIcon" /><br /><br />
+                        <div class="highLow">
+                            <div>
+                                H:
+                                <span id="high"></span>
+                            </div>
+
+                            <div>
+                                L:
+                                <span id="low"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col weatherStat">
+                        <span id="weatherStat"> Sunny</span><br /><br />
+                        <div class="col weatherDegree" id="temperature">
+                            26
+                        </div>
+                        <span class="cf">
+                            <a href="#" id="celsius"> ºC</a> \<a href="#" id="farenheit">F</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row container city">
+                <div class="col-6" id="cityTitle">Winnipeg<br /></div>
+                <div class="date" id="nowDate">
+                    <br />Friday, July 1, 2021 <br />9:49
+                </div>
+
+                <div class="col-5 weatherDetail">
+                    <p>CHANCE OF RAIN:10%</p>
+                    <p>HUMIDITY:<span id="humid"></span>%</p>
+                    <p>FEELS LIKE:<span id="feelsLike"> ºC</span></p>
+                    <p id="sunrise">SUNRISE: 5:25 AM</p>
+                    <p id="sunset">SUNSET: 9:40 PM</p>
+                </div>
+            </div>
+
+            <div class="container upcoming">
+                <div class="row weakly">
+                    <div class="col day">
+                        <h6>SAT</h6>
+                        <img src="images/cloudy.png" class="picCloudy" /><br />
+                        <span>36º 22º</span>
+                    </div>
+                    <div class="col day">
+                        <h6>SUN</h6>
+                        <img src="images/stormy.png" class="picStormy" /><br />
+                        <span>32º 22º</span>
+                    </div>
+                    <div class="col day">
+                        <h6>MON</h6>
+                        <img src="images/cloudy.png" class="picCloudy" /><br />
+                        <span>24º 16º</span>
+                    </div>
+                    <div class="col day">
+                        <h6>TUE</h6>
+                        <img src="images/suntransparent.png" class="picSun" /><br />
+                        <span>23º 12º</span>
+                    </div>
+                    <div class="col day">
+                        <h6>WED</h6>
+                        <img src="images/cloudy.png" class="picCloudy" /><br />
+                        <span>27º 12º</span>
+                    </div>
+                    <div class="col day">
+                        <h6>THU</h6>
+                        <img src="images/stormy.png" class="picStormy" /><br />
+                        <span>26º 16º</span>
+                    </div>
+                    <div class="col day">
+                        <h6>FRI</h6>
+                        <img src="images/stormy.png" class="picStormy" /><br />
+                        <span>27º 17º</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/index.js"></script>
+</body>
+
+</html>
